@@ -14,6 +14,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-commentary'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'pseewald/vim-anyfold'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,7 +59,7 @@ map mm :w<Enter>
 map çç :q<Enter>
 map ççj :q!<Enter>
 map mmç :wq<Enter>
-map <C-n> :NERDTreeToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
 
 
 
@@ -70,4 +74,19 @@ let g:indentLine_conceallevel=1
 "
 "
 "
+
+
+
+
+"plugin indent 
+filetype plugin indent on " required
+syntax on                 " required
+
+autocmd Filetype * AnyFoldActivate               " activate for all filetypes
+set foldlevel=99
+
+
+
+set omnifunc=phpcomplete#CompletePHP
 set number
+
